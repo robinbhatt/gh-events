@@ -7,7 +7,6 @@ on:
     # Filter
     branches: 
       - master
-			# # Other examples
       - dev # when pushed just to dev
       - dev-* # for: dev-new dev-this-is-new
       - feat/** # for: feat/new feat/new/button
