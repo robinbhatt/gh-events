@@ -4,20 +4,18 @@ on:
   pull_request:
     # We can define Activity Type like this by using the `types` key. The is key name has to be types.
     types: opened
-    # Also like this
-		# types:[opened, edited]
-
-    # Also like this
-		# types:
-		# - opened
-		# - edited
-
-    # Also like this
-		# types:
-		# - opened
+    # Filter
+    branches: 
+      - master
 
   # Event. We still have to write it like below even though we do not provide any values for the workflow_dispatch event
-  workflow_dispatch: null
+  workflow_dispatch:
+  push:
+    # Filter
+    branches:
+      - master
+    paths-ignore:
+      - '.github/workflow/*'
 jobs:
   test:
     runs-on: ubuntu-latest
