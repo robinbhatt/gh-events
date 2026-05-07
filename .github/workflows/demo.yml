@@ -1,27 +1,9 @@
 name: Deploy website
 on:
-  push:
-  # Event
+  push: null
   pull_request:
-
-		# We can define Activity Type like this by using the `types` key. The is key name has to be types.
     types: opened
-
-    # Also like this
-		# types:[opened, edited]
-
-    # Also like this
-		# types:
-		# - opened
-		# - edited
-
-    # Also like this
-		# types:
-		# - opened
-
-	# Event. We still have to write it like below even though we do not provide any values for the workflow_dispatch event
-  workflow_dispatch:
-
+  workflow_dispatch: null
 jobs:
   test:
     runs-on: ubuntu-latest
