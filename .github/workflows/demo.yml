@@ -3,10 +3,14 @@ on:
   # Event
   pull_request:
     # We can define Activity Type like this by using the `types` key. The is key name has to be types.
-    types: opened
+    types: opened 
     # Filter
     branches: 
       - master
+			# # Other examples
+      - dev # when pushed just to dev
+      - dev-* # for: dev-new dev-this-is-new
+      - feat/** # for: feat/new feat/new/button
 
   # Event. We still have to write it like below even though we do not provide any values for the workflow_dispatch event
   workflow_dispatch:
@@ -14,6 +18,8 @@ on:
     # Filter
     branches:
       - master
+    
+    # If a file is changed in the below given path(s) do not run the workflow 
     paths-ignore:
       - '.github/workflows/*'
 jobs:
